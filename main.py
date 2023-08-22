@@ -11,14 +11,14 @@ print(f"Starting server on {bind_address}")
 async def root():
     dados = {
         "nome": "EngeSEP",
-        "versao": "1.0.0",
+        "versao": "1.0.1",
         "descricao": "API para aquisição de dados de sensores",
         "autor": "EngeSEP",
         "email": "engesep@engesep.com.br",
         "telefone": "(11) 99999-9999",
         "endereco": "R. Dom Pedro I, 969 - São Cristóvão, Chapecó - SC, 89803-220",
         "licenca": "MIT",
-        "atualizado": "13/07/2023 19:15:00",
+        "atualizado": "22/08/2023 17:58:00",
         "servidor": "an9atbr9.up.railway.app",
         "site": "https://engesep.com.br",
         "documentacao": "https://engesep.com.br/docs",
