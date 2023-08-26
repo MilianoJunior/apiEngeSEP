@@ -8,6 +8,7 @@ bind_address = os.getenv('BIND', '0.0.0.0')
 port = int(os.getenv("PORT", default=5000))
 
 print(f"Starting server on {bind_address}")
+print(f"PORT: {port}")
 # an9atbr9.up.railway.app
 @app.get("/")
 async def root():
