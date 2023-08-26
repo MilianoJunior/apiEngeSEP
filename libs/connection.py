@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 
-DATABASE_URL = os.environ.get('RAILWAY_ENVIRONMENT',"mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway")  # ou o nome apropriado da variável de ambiente
+DATABASE_URL = os.environ.get('MySQL.MYSQL_URL',"mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway")  # ou o nome apropriado da variável de ambiente
 # DATABASE_URL = "mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway"
 print('URL: ',DATABASE_URL)
 engine = create_engine(DATABASE_URL)
