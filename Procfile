@@ -1,2 +1,2 @@
-web: python src/main.py
+web: python main.py
 worker: echo "another process"
