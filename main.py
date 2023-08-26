@@ -1,5 +1,6 @@
 import os
 from fastapi import FastAPI
+from libs.connection import DatabaseManager
 
 app = FastAPI()
 
@@ -26,6 +27,18 @@ async def root():
     }
     return dados
 
+@app.post("/consulta_id/")
+async def consulta_id(id: int):
+    db = DatabaseManager(table='cgh_fae')
+    leitura = db.where_id(id)
+    return leitura.to_json()
+
+@app.post("/consulta_condicao/")
+async def consulta_condicao(condicao: str):
+    db = DatabaseManager(table='cgh_fae')
+    leitura = db.where_condition(condicao)
+    return leitura.to_json()
+
 
 @app.get("/autentic/{user}/{password}")
 async def say_hello(name: str, password: str):
@@ -38,3 +51,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("PORT", default=5000)), log_level="info")
 
+
+'''
+177.38.15.73
+'''
