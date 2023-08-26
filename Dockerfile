@@ -17,7 +17,7 @@ COPY . .
 # Declare variáveis de ambiente Railway como ARG para que elas possam ser passadas no momento da construção
 ARG RAILWAY_ENVIRONMENT
 ENV RAILWAY_ENVIRONMENT=$RAILWAY_ENVIRONMENT
-
+ENV PATH="/opt/venv/bin:$PATH"
 # Instale as dependências do Python
 RUN python -m venv /opt/venv && . /opt/venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt
 
