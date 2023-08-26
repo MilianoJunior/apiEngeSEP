@@ -4,6 +4,13 @@ FROM python:3.8-slim
 # Diretório de trabalho no container
 WORKDIR /app
 
+# Instale dependências necessárias para compilar o mysqlclient
+RUN apt-get update && apt-get install -y \
+    default-libmysqlclient-dev \
+    gcc \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # Copie os arquivos do projeto para o diretório de trabalho
 COPY . .
 
