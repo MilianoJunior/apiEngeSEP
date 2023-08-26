@@ -3,10 +3,10 @@ import pandas as pd
 import os
 
 
-DATABASE_URL = os.environ.get('MYSQL_URL',"mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway")  # ou o nome apropriado da variável de ambiente
-# DATABASE_URL = "mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway"
-print('URL: ',DATABASE_URL)
-engine = create_engine(DATABASE_URL)
+# DATABASE_URL = os.environ.get('MYSQL_URL',"mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway")  # ou o nome apropriado da variável de ambiente
+# # DATABASE_URL = "mysql+pymysql://root:AIgi26lIFr70Rz6uGUbQ@containers-us-west-66.railway.app:7438/railway"
+# print('URL: ',DATABASE_URL)
+# engine = create_engine(DATABASE_URL)
 
 class DatabaseManager():
     def __init__(self, table):
@@ -14,13 +14,16 @@ class DatabaseManager():
 
     def where_id(self, id):
         '''Buscar o id no banco de dados e retornar um dataframe'''
-        df = pd.read_sql(f'SELECT * FROM {self.table} WHERE id = {id}', con=engine)
-        return df
+        # df = pd.read_sql(f'SELECT * FROM {self.table} WHERE id = {id}', con=engine)
+        # return df
+        return {'id': 1, 'nome': 'Miliano'}
 
     def where_condition(self, condition):
         '''Buscar o condição no banco de dados e retornar um dataframe'''
-        df = pd.read_sql(f'SELECT * FROM {self.table} WHERE {condition}', con=engine)
-        return df
+        # df = pd.read_sql(f'SELECT * FROM {self.table} WHERE {condition}', con=engine)
+        # return df
+        return {'id': 1, 'nome': 'Miliano 2'}
+
 
 
 
