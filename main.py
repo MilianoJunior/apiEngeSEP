@@ -5,7 +5,7 @@ from libs.connection import DatabaseManager
 app = FastAPI()
 
 bind_address = os.getenv('BIND', '0.0.0.0')
-port = int(os.getenv("PORT", default=5000))
+port = int(os.getenv("PORT", default=8000))
 
 print(f"Starting server on {bind_address}")
 print(f"PORT: {port}")
